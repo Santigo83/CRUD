@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="htpp://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Vista Clientes</title>
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"></script>
+</head>
+<style>
+	a {
+	color:white;
+	text-decoration: none;
+	}
+	a:hover{
+	color:white;
+	}
+</style>
+<body>
+	<div class="container">
+		<h1 class="p-3">Lista de clientes</h1>
+		<table class="table table-border">
+			<tr>
+				<th>Id</th>
+				<th>Nombre</th>
+				<th>Apellido</th>
+				<th>Email</th>
+				<th>Dirección</th>
+				<th>Genero</th>
+				<th>Editar información</th>
+				<th>Cancelar cuenta</th>
+
+
+			</tr>
+			<tr th:each="cliente : ${cliList}">
+
+				<td th:text="${cliente.id}"></td>
+				<td th:text="${cliente.nombre}"></td>
+				<td th:text="${cliente.apellido}"></td>
+				<td th:text="${cliente.email}"></td>
+				<td th:text="${cliente.direccion}"></td>
+				<td th:text="${cliente.genero}"></td>
+				<td>
+					<button class="btn btn-success">
+                        <a th:href="@{/editarCliente/{id}(id=${cliente.id})}">Editar información</a>
+                    </button>
+				</td>
+				<td>
+					<button class="btn btn-success"><a th:href="@{/eliminarCliente/{id}(id=${cliente.id})}">Cancelar cuenta</a></button>
+				</td>
+
+			</tr>
+		</table>
+		<button class="btn btn-primary btn-block"><a href="/nuevoClientes">Resgistrarse</a></button>
+	</div>
+</body>
+</html>

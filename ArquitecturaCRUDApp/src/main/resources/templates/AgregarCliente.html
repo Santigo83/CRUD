@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html xmlns:th="htpp://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Agregar Cliente</title>
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"></script>
+</head>
+
+
+<body>
+
+
+ <header th:fragment="header">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#"> <strong>Proyecto Arquitectura</strong></a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link active" aria-current="page"
+                                    th:href="@{/home}">Inicio</a></li>
+                            <li class="nav-item"><a class="nav-link" href="@{/actores/listar}"></a></li>
+                            <div class="container-fluid">
+                                <form class="d-flex" role="search" th:action="@{/busqueda}">
+                                    <input class="form-control me-2" type="search" placeholder="¿Que buscas hoy?"
+                                        aria-label="Search" name="query">
+                                    <button class="btn btn-success">Buscar</button>
+                                </form>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+        </nav>
+    </header>
+
+
+
+	<div class="container">
+		<h1 class="p-3">Cliente nuevo</h1>
+		<form th:action="@{/guardarClientes}" th:object="${cli}" method="post">
+			<div class="row">
+				<div class="form-group col-md-12">
+					<label class="col-md-3">Nombre</label>
+					<div class=col-md-6>
+						<input type="text" th:field="*{nombre}"
+							class="form-control input-sm" required="required">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-md-12">
+					<label class="col-md-3">Apellido</label>
+					<div class=col-md-6>
+						<input type="text" th:field="*{apellido}"
+							class="form-control input-sm" required="required">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-md-12">
+					<label class="col-md-3">Correo electronico</label>
+					<div class=col-md-6>
+						<input type="email" th:field="*{email}"
+							class="form-control input-sm" required="required">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-md-12">
+					<label class="col-md-3">Dirección</label>
+					<div class=col-md-6>
+						<input type="text" th:field="*{direccion}"
+							class="form-control input-sm" required="required">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-md-12">
+					<label class="col-md-3">Genero</label>
+					<div class=col-md-6>
+						<div class="form-check-inline">
+							<label class="form-check-label"> <input type="radio"
+								class="form-check-input" th:field="*{genero}" value="Femenino" />Femenino
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="form-group col-md-12">
+					<!--<label class="col-md-3">Genero</label>-->
+					<div class=col-md-6>
+						<div class="form-check-inline">
+							<label class="form-check-label"> <input type="radio"
+								class="form-check-input" th:field="*{genero}" value="Masculino" />Masculino
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="form-group col-md-12">
+					<!--<label class="col-md-3">Genero</label>-->
+					<div class=col-md-6>
+						<div class="form-check-inline">
+							<label class="form-check-label"> <input type="radio"
+								class="form-check-input" th:field="*{genero}" value="Otro" />Otro
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div></div>
+			<div class="row p-2">
+				<div class="col-md-2">
+					<button class="btn btn-success">registar</button>
+				</div>
+			</div>
+		</form>
+	</div>
+	<footer th:fragmanet="footer"
+		class="bg-dark text-center text-white fixed-bottom">
+		<div class="container">
+			<p>Proyecto Arquitectura &copy; -2022</p>
+		</div>
+	</footer>
+
+</body>
+</html>

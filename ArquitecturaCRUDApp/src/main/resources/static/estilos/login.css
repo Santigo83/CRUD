@@ -1,0 +1,172 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+}
+body{
+	background-color: lightgray ;
+}
+
+main{
+	width: 100%;
+	padding: 20px;
+	margin: auto;
+	margin-top: 100px;
+}
+
+.contenedor_principal{
+	width: 100%;
+	max-width: 800px;
+	margin: auto;
+	position: relative;
+}
+
+.caja1{
+	width: 100%;
+	padding: 10px 20px;
+	display: flex;
+	justify-content: center;
+	background-color: #767676;
+	border-radius: 20px;
+}
+
+.caja1 div{
+	margin: 100px 40px;
+	transition: all 500ms;
+}
+
+.caja1 div p,
+.caja1 div button{
+	margin-top: 30px;
+}
+
+.caja1 h3{
+	font-weight: 400;
+	font-size: 26px;
+}
+
+.caja1 button{
+	padding: 10px 40px;
+	border: none;
+	background: black;
+	font-size: 14px;
+	font-weight: 600;
+	cursor: pointer;
+	color: white;
+	outline: none;
+	transition: all 300ms;
+	border-radius: 5px;
+}
+
+.caja1 button:hover{
+	background: white;
+	color: black;
+	border-radius: 5px;
+}
+
+/*---FORMULARIOS---*/
+
+.caja2{
+	display: flex;
+	align-items: center;
+	width: 100%;
+	max-width: 380px;
+	position: relative;
+	top: -185px;
+	left: 10px;
+}
+
+
+.caja2 form{
+	width: 100%;
+	padding: 60px 20px;
+	background: white;
+	position: absolute;
+	border-radius: 20px;
+}
+
+.caja2 form h2{
+	font-size: 30px;
+	text-align: center;
+	margin-bottom: 20px;
+	color: black;
+}
+
+.caja2 form input{
+	width: 100%;
+	margin-top: 5px;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.caja2 form select{
+	width: 100%;
+	margin-top: 5px;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.caja2 form button{
+	padding: 10px 40px;
+	margin-top: 40px;
+	border: none;
+	font-size: 14px;
+	background: black;
+	cursor: pointer;
+	outline: none;
+	border-radius: 5px;
+	color: white;
+}
+
+.caja2 form button:hover{
+	background: lightgray;
+	color: black;
+	border-radius: 5px;
+}
+
+.caja2 button a{
+	color: white;
+}
+
+.formulario_login{
+	opacity: 1;
+	display: block;
+}
+
+.formulario_Register{
+	display: none;
+}
+
+
+/*---RESPONSIVE DESING---*/
+
+@media screen and (max-width: 850px){
+	main{
+		margin-top: 50px;
+	}
+
+	.caja1{
+		max-width: 350px;
+		height: 300px;
+		flex-direction: column;
+		margin: auto;
+	}
+
+	.caja2 div{
+		margin: 0px;
+		position: absolute;
+	}
+
+	/*--FORMULARIO--*/
+
+	.caja2{
+		top: -10PX;
+		left: -5px;
+		margin: auto;
+	}
+
+	.caja2 form{
+		position: relative;
+	}
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../estilos/login.css">
+	<link rel="stylesheet" type="text/css" href="../estilos/index.css">
+
+	<title>Login</title>
+</head>
+<body>
+
+	<section id="header">
+		<a href="#"><img src="../imagenes/logo.png" class="logo"></a>
+
+		<div>
+			<ul id="navbar">
+				<li><a href="../index.html">Inicio</a></li>
+				<li><a href="#">Ingresar</a></li>
+				<li><a href="../html/shop.html">Tienda</a></li>
+				<li><a href="../nosotros.html">Nosotros</a></li>
+			</ul>				
+		</div>
+	</section>	
+
+
+	<main>
+		<div class="contenedor_principal">
+			<div class="caja1">
+				<div class="caja1-login">
+					<h3>¿Tienes una cuenta?</h3>
+					<p>Inicia sesión</p>
+					<button id="btn_iniciar-sesion">Iniciar sesión</button>
+				</div>
+
+				<div class="caja1-register">
+					<h3>¿Aún no tienes una cuenta?</h3>
+					<p>Registrate</p>
+					<button id="btn_Registrarse">Registrarse</button>
+				</div>
+			</div>
+
+			<div class="caja2">
+				<form action="" class="formulario_login">
+					<h2>Iniciar sesión</h2>
+					<input type="text" placeholder="Correo electrónico">
+					<input type="password" placeholder="Contraseña">
+					<button><a href="../index.html">Entrar</a></button>
+				</form>
+				<form action="" class="formulario_Register">
+					<h2>Registrarse</h2>
+					<input type="text" placeholder="Correo electrónico">
+					<input type="text" placeholder="Nombre completo">
+					<input type="text" placeholder="Usuario">
+					<input type="password" placeholder="Contraseña">
+					<select>
+						<option disabled selected>Tipo de documento</option>
+						<option>Cédula de ciudadanía</option>
+						<option>Cédula de extranjería</option>
+					</select>
+					<input type="text" placeholder="Número de documento">
+					<input type="text" placeholder="Teléfono">
+					<input type="text" placeholder="Dirección">
+					<button>Registrarse</button>
+				</form>
+			</div>
+		</div>
+	</main>
+
+	<script src="../js/javascript.js"></script>
+</body>
+</html>
